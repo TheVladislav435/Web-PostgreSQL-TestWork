@@ -1,0 +1,31 @@
+.hdiv {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.button_bd {
+    padding: 10px;
+    background: #555555;
+    color: white;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+.button_bd:hover {
+    background: #666666;
+}
+label {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.form_bd {
+    width: 500px;
+    max-width: 50%;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+    margin: 40px auto;
+    box-sizing: border-box;
+    text-align: center;
+}

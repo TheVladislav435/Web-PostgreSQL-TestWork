@@ -1,0 +1,23 @@
+﻿@model BD_Objects
+@{
+    ViewData["Title"] = "Добавить обьект";
+}
+<link rel="stylesheet" href="~/css/database.css" asp-append-version="true" />
+<div class="hdiv">
+    <h1>Добавить обьект</h1>
+</div>
+<div class="form_bd">
+    <form method="post" asp-controller="Database" asp-action="Check">
+        <div class="form-group">
+            <label asp-for="INN">ИНН:</label>
+            <input type="text" class="form-control" id="INN" asp-for="INN" name="INN">
+            <span asp-validation-for="INN" style="color: red; font-weight: bold;"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Описание:</label>
+            <textarea asp-for="Description" class="form-control" id="Description" name="Description"></textarea>
+            <span asp-validation-for="Description" style="color: red; font-weight: bold;"></span>
+        </div>
+        <button type="submit" class="button_bd">Добавить</button>
+    </form>
+</div>

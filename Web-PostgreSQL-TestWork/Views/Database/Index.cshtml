@@ -1,0 +1,39 @@
+﻿@model List<BD_Objects>
+@{
+    ViewData["Title"] = "База данных";
+    <link rel="stylesheet" href="~/css/database.css" asp-append-version="true" />
+}
+<div class="hdiv">
+    <h1>База данных</h1>
+</div>
+@if (Model != null && Model.Any())
+{
+    <table class="table-custom">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ИНН</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.INN</td>
+                    <td>@item.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">
+        <p>Нет данных для отображения</p>
+    </div>
+}
+<a href="/Database/AddObject/">
+    <button class="button_bd">Добавить запись</button>
+</a>

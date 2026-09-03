@@ -11,7 +11,7 @@ namespace Web_PostgreSQL_TestWork.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }
