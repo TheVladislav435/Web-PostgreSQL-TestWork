@@ -29,3 +29,32 @@ label {
     box-sizing: border-box;
     text-align: center;
 }
+
+/* css таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+th {
+    text-align: left;
+    padding: 14px 12px 12px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #64748b;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+/* Последняя строка без нижней границы */
+tr:last-child td {
+    border-bottom: none;
+}
