@@ -24,7 +24,7 @@ namespace Web_PostgreSQL_TestWork.Controllers
             try
             {
                 await _connection.OpenAsync();
-                using var command = new NpgsqlCommand("SELECT INN, Description FROM BD_Objects", _connection);
+                using var command = new NpgsqlCommand("SELECT \"INN\", \"Description\" FROM \"BD_Objects\"", _connection);
                 using var reader = await command.ExecuteReaderAsync();
 
                 while (await reader.ReadAsync())
@@ -65,7 +65,7 @@ namespace Web_PostgreSQL_TestWork.Controllers
 
                         // INSERT запрос с RETURNING Id
                         using var command = new NpgsqlCommand(
-                            "INSERT INTO BD_Objects (INN, Description) VALUES (@inn, @description) RETURNING Id",
+                            "INSERT INTO \"BD_Objects\" (\"INN\", \"Description\") VALUES (@inn, @description) RETURNING \"Id\"",
                             _connection
                         );
 
