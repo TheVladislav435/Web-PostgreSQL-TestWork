@@ -24,15 +24,16 @@ namespace Web_PostgreSQL_TestWork.Controllers
             try
             {
                 await _connection.OpenAsync();
-                using var command = new NpgsqlCommand("SELECT \"INN\", \"Description\" FROM \"BD_Objects\"", _connection);
+                using var command = new NpgsqlCommand("SELECT \"Id\", \"INN\", \"Description\" FROM \"BD_Objects\"", _connection);
                 using var reader = await command.ExecuteReaderAsync();
 
                 while (await reader.ReadAsync())
                 {
                     bd_object.Add(new BD_Objects
                     {
-                        INN = reader.GetString(0),
-                        Description = reader.GetString(1),
+                        Id = reader.GetInt32(0),
+                        INN = reader.GetString(1),
+                        Description = reader.GetString(2),
                     });
                 }
 
